@@ -10,12 +10,10 @@ public:
                 inDeg[i]++;
             }
         }
-        vector<int>visit(n,0);
         queue<int>q;
         for(int i = 0;i<n;i++){
             if(inDeg[i]==0){
                 q.push(i);
-                visit[i]=1;
             }
         }
         vector<int>ans;
