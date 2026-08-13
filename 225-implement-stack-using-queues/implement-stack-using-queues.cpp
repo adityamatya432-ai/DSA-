@@ -10,8 +10,6 @@ public:
         q.push(x);
 
         int n = q.size();
-
-        // naye element ko front par lao
         for(int i = 0; i < n - 1; i++) {
             q.push(q.front());
             q.pop();
