@@ -17,11 +17,11 @@ public:
                 for(char ch = 'a';ch<='z';ch++){
                     word[i]=ch;
                     if(st.find(word)!=st.end()){
+                        st.erase(word);
                         q.push({word,d+1});
                     }
                 }
                 word[i]=original;
-                st.erase(word);
             }
         }
         return 0;
