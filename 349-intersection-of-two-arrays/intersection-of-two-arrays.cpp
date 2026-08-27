@@ -11,10 +11,8 @@ public:
             unordered_set<int>st(nums1.begin(),nums1.end());
             for(int i=0;i<m;i++){
                 if(st.find(nums2[i])!=st.end()){
-                    if(an.find(nums2[i])==an.end()){
-                        an.insert(nums2[i]);
-                        ans.push_back(nums2[i]);
-                    }
+                    ans.push_back(nums2[i]);
+                    st.erase(nums2[i]);
                 }
             }
         }
@@ -22,10 +20,8 @@ public:
             unordered_set<int>st(nums2.begin(),nums2.end());
             for(int i=0;i<n;i++){
                 if(st.find(nums1[i])!=st.end()){
-                    if(an.find(nums1[i])==an.end()){
-                        an.insert(nums1[i]);
-                        ans.push_back(nums1[i]);
-                    }
+                    ans.push_back(nums1[i]);
+                    st.erase(nums1[i]);
                 }
             }
         }
