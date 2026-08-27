@@ -1,23 +1,19 @@
 class Solution {
 public:
     string reverseWords(string s) {
+        int n = s.size();
         int i = 0;
-        
-        while (i < s.size()) {
-            int j = i;
-
-            // Find the end of the current word
-            while (j < s.size() && s[j] != ' ') {
-                j++;
+        int j = 0;
+        while(j<=n){
+            if(j==n-1){
+                reverse(s.begin()+i,s.begin()+j+1);
             }
-
-            // Reverse the current word
-            reverse(s.begin() + i, s.begin() + j);
-
-            // Move i to the next word
-            i = j + 1;
+            else if(s[j]==' '){
+                reverse(s.begin()+i,s.begin()+j);
+                i=j+1;
+            }
+            j++;
         }
-
         return s;
     }
 };
