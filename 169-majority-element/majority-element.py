@@ -12,4 +12,12 @@ class Solution:
             else:
                 cnt-=1
         
-        return x
+        total = 0
+        for n in nums:
+            if n==x:
+                total+=1
+        
+        if total>len(nums)//2:
+            return x
+        return -1
+            
