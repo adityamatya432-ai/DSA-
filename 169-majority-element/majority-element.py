@@ -8,12 +8,9 @@ class Solution:
             else:
                 mp[n]=1
         
-        x = len(nums)/2
+        x = len(nums)//2
 
         ans = None
         for key,value in mp.items():
             if value>x:
-                ans = key
-                break
-
-        return ans
+                return key
