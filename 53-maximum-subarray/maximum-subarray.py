@@ -6,10 +6,8 @@ class Solution:
 
         for n in nums:
             sum+=n
-            if sum>0:
-                maxi = max(maxi,sum)
-            else:
-                maxi = max(maxi,sum)
+            maxi = max(sum,maxi)
+            if sum<0:
                 sum=0
         
         return maxi
