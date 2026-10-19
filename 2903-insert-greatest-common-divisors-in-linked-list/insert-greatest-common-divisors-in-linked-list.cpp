@@ -1,27 +1,9 @@
 class Solution {
 public:
 
-    int hcf(int &data1,int &data2){
-        int maxi = INT_MIN;
-        if(data1==data2){
-            return data1;
-        }
-        else if(data1>data2){
-            for(int i = 1;i<=data2;i++){
-                if(data1%i==0 && data2%i==0){
-                    maxi = max(maxi,i);
-                }
-            }
-        }
-
-        else if(data1<data2){
-            for(int i = 1;i<=data1;i++){
-                if(data1%i==0 && data2%i==0){
-                    maxi = max(maxi,i);
-                }
-            }
-        }
-        return maxi;
+    int hcf(int a, int b){
+        if (b == 0) return a;
+        return gcd(b, a % b);
     }
 
     ListNode* insertGreatestCommonDivisors(ListNode* head) {
