@@ -2,16 +2,24 @@ class Solution {
 public:
     vector<int> targetIndices(vector<int>& nums, int target) {
 
-        int n = nums.size();
         vector<int>ans;
-        sort(nums.begin(),nums.end());
+        int n = nums.size();
+        int cntLeft = 0;
+        int cntRight = 0;
+        for(int i = 0;i<n;i++){
+            if(nums[i]<target){
+                cntLeft++;
+            }
 
-        for(int i=0;i<n;i++){
-            if (nums[i]==target){
-                ans.push_back(i);
+            else if(nums[i]>target){
+                cntRight++;
             }
         }
 
-        return ans;
+        for(int j = cntLeft;j<n-cntRight;j++){
+            ans.push_back(j);
+        }
+
+        return  ans;
     }
 };
