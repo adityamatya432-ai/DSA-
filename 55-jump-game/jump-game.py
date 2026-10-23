@@ -7,9 +7,6 @@ class Solution:
         for i in range(len(nums)):
             if maxi<i:
                 return False
-
-            elif maxi>len(nums)-1:
-                return True
             maxi = max(nums[i]+i,maxi)
 
 
