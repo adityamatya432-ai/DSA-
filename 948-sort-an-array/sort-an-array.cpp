@@ -29,8 +29,8 @@ public:
             }
         }
 
-        for (int i = 0; i < temp.size(); i++) {
-            nums[low + i] = temp[i];
+        for (int i = low;i<=high; i++) {
+            nums[i] = temp[i-low];
         }
     }
     void mergeSort(vector<int>& nums,int low , int high){
